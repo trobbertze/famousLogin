@@ -1,0 +1,17 @@
+{
+  "name": "famousLogin",
+  "description": "Famous style login page.",
+  "homepage": "",
+  "author": "Theo Robbertze <theo.robbertze@gmail.com> (http://strollalot.co.za)",
+  "version": "0.0.1",
+  "git": "",
+  "packages": {
+    "famono": {},
+    "events": {
+      "path": "/Users/theorobbertze/Workspace/packages/events"
+    },
+    "progressIndicator":{
+      "path": "/Users/theorobbertze/Workspace/packages/progressIndicator"
+    }
+  }
+}

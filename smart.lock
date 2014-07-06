@@ -1,0 +1,23 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "famousLogin": {
+        "path": "."
+      }
+    },
+    "packages": {
+      "famousLogin": {
+        "path": "."
+      },
+      "famono": {
+        "git": "https://github.com/raix/Meteor-famono.git",
+        "tag": "v0.3.11",
+        "commit": "d7c6dbc471ad034e2dc0f7d557838c474604cee9"
+      },
+      "progressIndicator": {
+        "path": "../progressIndicator"
+      }
+    }
+  }
+}

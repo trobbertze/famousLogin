@@ -1,0 +1,86 @@
+.FL {
+  color: #677580 !important;
+}
+
+.FL.title {
+  font-size: 1.5em;
+  text-align: center;
+  color: #677580 !important;
+}
+
+.FL.form-control {
+  text-align: center;
+}
+
+.FL.FLlogin.form-control {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+
+.FL.FLlogin.form-control.userName {
+  -webkit-border-top-left-radius: 8px !important;
+  -webkit-border-top-right-radius: 8px !important;
+  -moz-border-radius-topleft: 8px !important;
+  -moz-border-radius-topright: 8px !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+
+.FL.FLlogin.form-control.password {
+  -webkit-border-bottom-right-radius: 8px !important;
+  -webkit-border-bottom-left-radius: 8px !important;
+  -moz-border-radius-bottomright: 8px !important;
+  -moz-border-radius-bottomleft: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+
+  border-top: 0 !important;
+}
+
+.FL.btn {
+  padding: 0.7em !important;
+  vertical-align: middle;
+  color: #677580 !important;
+}
+
+.FL.btn.login {
+  margin-top: 1em;
+}
+
+.FL.btn.signup {
+  margin-top: 0;
+}
+
+.FL.noAccountMessage {
+  margin-top: 2em;
+  text-align: center;
+  color: #677580 !important;
+}
+
+.FL.FLsignup.form-control.password,
+.FL.FLsignup.form-control.repeatPassword {
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+
+.FL.FLsignup.form-control.password {
+  -webkit-border-top-left-radius: 8px !important;
+  -webkit-border-top-right-radius: 8px !important;
+  -moz-border-radius-topleft: 8px !important;
+  -moz-border-radius-topright: 8px !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+
+.FL.FLsignup.form-control.repeatPassword {
+  -webkit-border-bottom-right-radius: 8px !important;
+  -webkit-border-bottom-left-radius: 8px !important;
+  -moz-border-radius-bottomright: 8px !important;
+  -moz-border-radius-bottomleft: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+
+  border-top: 0 !important;
+}
