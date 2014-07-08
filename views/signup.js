@@ -15,7 +15,7 @@ SignupView = function(kwargs){
   function _SignupView(kwargs) {
     View.apply(this);
 
-    this.control = new SignupControl();
+    this._control = new SignupControl();
 
     this.form = new SequentialLayout({
       direction: Utility.Direction.Y,
@@ -117,13 +117,20 @@ SignupView = function(kwargs){
 
     this.add(modifier).add(this.form);
 
+    this.progress = new ProgressIndicator();
+    this.add(this.progress);
+
+    this.alert = new AnimatedAlert();
+    this.add(this.alert);
+
   }
   // ---------------------------------------------------------------------------
   _SignupView.prototype = Object.create(View.prototype);
   _SignupView.prototype.constructor = _SignupView;
   // ---------------------------------------------------------------------------
   _SignupView.prototype.signup = function(evt) {
-    this.control.register(
+    this.progress.show();
+    this._control.register(
       {
         username: this.username.getValue(),
         password: this.password.getValue()
@@ -133,7 +140,10 @@ SignupView = function(kwargs){
   };
   // ---------------------------------------------------------------------------
   _SignupView.prototype.signupComplete = function(err) {
-    Session.set("loggedin", true);
+    this.progress.hide();
+    if (err) {
+      this.alert.show(err.reason);
+    }
   };
   // ---------------------------------------------------------------------------
   _SignupView.prototype.returnToLogin = function(evt) {

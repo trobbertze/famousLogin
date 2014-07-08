@@ -15,9 +15,10 @@ SignupControl.prototype.register = function(options, callback) {
 };
 // ---------------------------------------------------------------------------
 SignupControl.prototype.registerComplete = function(callback, err){
+  if (callback) {
+    callback(err);
+  }
   if (!err){
-    if (callback) {
-      callback(err);
-    }
+    Events().emit("login");
   }
 };

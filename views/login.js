@@ -15,6 +15,8 @@ LoginView = function(kwargs){
   function _LoginView(kwargs) {
     View.apply(this);
 
+    this._control = new LoginControl();
+
     this.form = new SequentialLayout({
       direction: Utility.Direction.Y,
     });
@@ -29,7 +31,7 @@ LoginView = function(kwargs){
       content: "Tjomma"
     });
 
-    this.userName = new InputSurface({
+    this.username = new InputSurface({
       classes: [
         "FL",
         "FLlogin",
@@ -97,7 +99,7 @@ LoginView = function(kwargs){
     this.form.sequenceFrom(
       [
         this.title,
-        this.userName,
+        this.username,
         this.password,
         loginButton,
         noAccountMessage,
@@ -108,6 +110,10 @@ LoginView = function(kwargs){
     this.add(modifier).add(this.form);
 
     this.progress = new ProgressIndicator();
+    this.add(this.progress);
+
+    this.alert = new AnimatedAlert();
+    this.add(this.alert);
 
   }
   // ---------------------------------------------------------------------------
@@ -120,8 +126,24 @@ LoginView = function(kwargs){
   // ---------------------------------------------------------------------------
   _LoginView.prototype.login = function(evt) {
 
+    evt.stopPropagation();
+
     this.progress.show();
-    this._eventOutput.emit('clickLogin');
+
+    this._control.login(
+      {
+        username: this.username.getValue(),
+        password: this.password.getValue()
+      },
+      this.loginComplete.bind(this)
+    );
+  };
+  // ---------------------------------------------------------------------------
+  _LoginView.prototype.loginComplete = function(err) {
+    this.progress.hide();
+    if(err) {
+      this.alert.show(err.reason);
+    }
   };
   // ---------------------------------------------------------------------------
   return new _LoginView(kwargs);

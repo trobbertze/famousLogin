@@ -12,6 +12,9 @@
     },
     "progressIndicator":{
       "path": "/Users/theorobbertze/Workspace/packages/progressIndicator"
+    },
+    "animatedAlert":{
+      "path": "/Users/theorobbertze/Workspace/packages/animatedAlert"
     }
   }
 }

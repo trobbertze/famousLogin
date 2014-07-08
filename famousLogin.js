@@ -1,11 +1,11 @@
 FamousLogin = function(options){
   // Famous Modules
   require("famous/core/famous");
-  var View      = require('famous/core/View');
+  var View        = require('famous/core/View');
   var Lightbox    = require('famous.views/Lightbox');
   var Transform   = require('famous/core/Transform');
   var Utility     = require('famous/utilities/Utility');
-  var Easing    = require('famous/transitions/Easing');
+  var Easing      = require('famous/transitions/Easing');
 
   require('famous/inputs/FastClick');
 
@@ -26,7 +26,6 @@ FamousLogin = function(options){
 
     this.loginView = new LoginView();
     this.loginView.on("clickSignup", this.showSignup.bind(this));
-    this.loginView.on("clickLogin", this.login.bind(this));
 
     this.signupView = new SignupView();
     this.signupView.on("returnToLogin", this.showLogin.bind(this));
@@ -43,11 +42,6 @@ FamousLogin = function(options){
   // ---------------------------------------------------------------------------
   _FamousLogin.prototype.showSignup = function() {
     this.lightbox.show(this.signupView);
-  };
-  // ---------------------------------------------------------------------------
-  _FamousLogin.prototype.login = function() {
-    this._eventOutput.emit('login');
-    Events().emit("login");
   };
   // ---------------------------------------------------------------------------
   return new _FamousLogin(options);

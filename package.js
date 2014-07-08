@@ -7,7 +7,9 @@ Package.on_use(function (api, where) {
   api.use(['events'], ['client', 'server']);
   api.use(['famono'], 'client');
   api.use(['progressIndicator'], 'client');
+  api.use(['animatedAlert'], 'client');
 
+  api.add_files('control/login.js', 'client');
   api.add_files('views/login.js', 'client');
 
   api.add_files('control/signup.js', 'client');
