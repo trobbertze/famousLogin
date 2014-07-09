@@ -4,6 +4,7 @@ SignupView = function(kwargs){
   var View             = require('famous/core/View');
   var Surface          = require('famous/core/Surface');
   var RenderNode       = require('famous/core/RenderNode');
+  var Transform        = require('famous/core/Transform');
   var SequentialLayout = require('famous.views/SequentialLayout');
   var InputSurface     = require('famous.surfaces/InputSurface');
   var StateModifier    = require('famous/modifiers/StateModifier');
@@ -22,13 +23,13 @@ SignupView = function(kwargs){
     });
 
     var title = new Surface({
-      size: [200, 50],
+      size: [200, 120],
       classes: [
         "FL",
         "FLsignup",
         "title"
       ],
-      content: "Tjomma"
+      content: "<img src='img/Splashscreen.png' style='height:110px'>"
     });
 
     this.username = new InputSurface({
@@ -97,8 +98,8 @@ SignupView = function(kwargs){
     returnButton.on('click', this.returnToLogin.bind(this));
 
     var modifier = new StateModifier({
-      align: [0.5, 0.5],
-      origin: [0.5, 0.5]
+      origin: [0.5, 0],
+      transform: Transform.translate(0, 20, 0)
     });
 
     this.form.sequenceFrom(
