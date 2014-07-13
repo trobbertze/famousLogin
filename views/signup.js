@@ -9,7 +9,6 @@ SignupView = function(kwargs){
   var InputSurface     = require('famous.surfaces/InputSurface');
   var StateModifier    = require('famous/modifiers/StateModifier');
   var Utility          = require('famous/utilities/Utility');
-
   require('famous/inputs/FastClick');
 
   // ---------------------------------------------------------------------------
